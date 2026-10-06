@@ -1,0 +1,52 @@
+body {
+  background-color: rgb(38, 58, 44);
+  color: white;
+}
+.cell {
+  --bg-color: burlywood;
+}
+
+.main > div {
+  margin: 0.25rem;
+  padding: 0.25rem;
+  border: 0.25rem dotted white;
+}
+
+.text-big {
+  font-size: 2rem;
+}
+.controls {
+  width: 60%;
+  justify-self: center;
+  user-select: none;
+  touch-action: manipulation;
+}
+.controls > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: bisque;
+  aspect-ratio: 1;
+  color: rgb(172, 87, 251);
+  font-weight: 800;
+
+  border-radius: 1rem;
+}
+
+.controls > div:active {
+  background-color: rgb(172, 87, 251);
+  color: bisque;
+}
+
+.row {
+  display: flex;
+  gap: 1rem;
+}
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.color {
+  color: black;
+}

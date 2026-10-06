@@ -1,0 +1,54 @@
+.container {
+  position: relative;
+}
+.grid {
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+  grid-template-rows: repeat(var(--grid-rows), 1fr);
+}
+.grid .cell {
+  position: relative;
+  aspect-ratio: 1;
+
+  background-image: var(--bg-url);
+  background-size: cover;
+  image-rendering: pixelated;
+
+  background-color: var(--bg-color);
+
+  color: var(--fg-color);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cell_center {
+  font-size: clamp(14px, 100vw / var(--grid-columns) * 0.5, 400px);
+}
+.cell_corner {
+  position: absolute;
+  font-size: clamp(4px, 100vw / var(--grid-columns) / 6, 400px);
+
+  background-color: rgba(0,0,0,0.1);
+  padding: 0.1rem 0.25rem;
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+}
+.cell_tl {
+  top: 0;
+  left: 0;
+}
+.cell_tr {
+  top: 0;
+  right: 0;
+}
+.cell_bl {
+  bottom: 0;
+  left: 0;
+}
+.cell_br {
+  bottom: 0;
+  right: 0;
+}

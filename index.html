@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Treasure Dig</title>
+    <link rel="stylesheet" href="assets/styles/grid.css" />
+    <link rel="stylesheet" href="assets/styles/anim.css" />
+    <link rel="stylesheet" href="assets/styles/style.css" />
+  </head>
+  <body>
+    <main class="main">
+      <div class="wrapper">
+        <label
+          >Seed:
+          <input name="seed" type="number" value="42" class="input" />
+        </label>
+
+        <button type="button" class="btn btn-restart">restart</button>
+        <div class="items" id="items"></div>
+      </div>
+      <div class="wrapper row">
+        <span>Air:</span>
+        <div class="air" id="air"></div>
+      </div>
+      <div class="wrapper">
+        <div class="container text-big" id="game"></div>
+      </div>
+      <div class="wrapper">
+        <div
+          class="controls grid"
+          style="--grid-columns: 3; --grid-rows: 3"
+          id="controls"
+        >
+          <div></div>
+          <div class="btn-up">UP</div>
+          <div></div>
+          <div class="btn-left">LEFT</div>
+          <div></div>
+          <div class="btn-right">RIGHT</div>
+          <div></div>
+          <div class="btn-down">DOWN</div>
+          <div></div>
+        </div>
+      </div>
+    </main>
+
+    <!-- <script type="module" src="src/main.js"></script> -->
+    <script type="module" src="src/main.js"></script>
+  </body>
+</html>

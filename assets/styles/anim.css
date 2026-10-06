@@ -1,0 +1,85 @@
+.shiver-animation .cell_center {
+  animation: shiver 0.3s infinite linear;
+}
+@keyframes shiver {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, 1px) rotate(-0.5deg);
+  }
+  20% {
+    transform: translate(1px, -1px) rotate(0.5deg);
+  }
+  30% {
+    transform: translate(-1px, -1px) rotate(-0.5deg);
+  }
+  40% {
+    transform: translate(1px, 1px) rotate(0.5deg);
+  }
+  50% {
+    transform: translate(-1px, 1px) rotate(-0.5deg);
+  }
+  60% {
+    transform: translate(1px, -1px) rotate(0.5deg);
+  }
+  70% {
+    transform: translate(-1px, -1px) rotate(-0.5deg);
+  }
+  80% {
+    transform: translate(1px, 1px) rotate(0.5deg);
+  }
+  90% {
+    transform: translate(-1px, -1px) rotate(-0.5deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+.cell-slide {
+  background-repeat: repeat; /* Allows seamless looping */
+  animation: slideBg 16s linear infinite;
+}
+@keyframes slideBg {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -100vw 0;
+  }
+}
+
+.shake-animation {
+  animation: shake-tilt 0.2s ease-in-out infinite;
+}
+
+@keyframes shake-tilt {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-4deg);
+  }
+  75% {
+    transform: rotate(4deg);
+  }
+}
+
+.jump-animation .cell_center {
+  animation: jump 0.2s ease-in-out infinite;
+}
+@keyframes jump {
+  0% {
+    transform: translateY(0);
+    /* Fast departure from the ground */
+    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  100% {
+    /* Peak height of the jump */
+    transform: translateY(-1rem);
+    /* Fast descent */
+    animation-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  }
+}
