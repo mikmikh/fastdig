@@ -31,7 +31,7 @@ const initState = {
   air: 100,
   airMax: 100,
   key2obj: {},
-  items: [],
+  items: {},
 };
 class Game {
   constructor(size = [4, 4], seed = 42) {
@@ -308,21 +308,32 @@ class Game {
     if (!item || item === "empty") {
       return;
     }
-    this.state.items.push(item);
+    this.state.items[item] ??= 0;
+    this.state.items[item]++;
     const itemsEl = document.getElementById("items");
     itemsEl.textContent = JSON.stringify(this.state.items);
   }
 }
 
 function main() {
-  const size = [7, 7];
+  const size = [5, 5];
   const seed = 43;
   let game = new Game(size, seed);
 
-  const btnRestart = document.querySelector(".btn-restart");
-  btnRestart.addEventListener("click", () => {
+  function startGame(seed = 42, size = [5, 5]) {
     game.dispose();
     game = new Game(size, seed);
+  }
+
+  const btnRestart = document.querySelector(".btn-restart");
+  btnRestart.addEventListener("click", () => {
+    const inputSeed = document.getElementById('input-seed');
+    const inputSize = document.getElementById('input-size');
+    const seed = Math.max(1, inputSeed.value);
+    inputSeed.value = seed;
+    const size = Math.min(17, Math.max(3, inputSize.value));
+    inputSize.value = size;
+    startGame(seed, [size, size]);
   });
 }
 
